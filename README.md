@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/versioneer-tech/package-r-design/main/logo.png" height="15"/>
+
 # packageR Docs
 
 ## Development
@@ -49,5 +51,9 @@ docker build . -t package-r-docs --build-arg VERSION=$(git rev-parse --short HEA
 Run it locally with:
 
 ```bash
-docker run --rm -p 5000:80 --name packageR-docs package-r-docs:latest
+docker run --rm -p 5000:80 --name package-r-docs package-r-docs:latest
 ```
+
+## License
+
+[CC BY-NC-SA](LICENSE) (Attribution-NonCommercial-ShareAlike) from https://creativecommons.org/licenses/by-nc-sa/4.0/

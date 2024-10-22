@@ -1,11 +1,11 @@
-# Data Sharing
+# UI
 
-Data sharing in **packageR** is designed to be intuitive and efficient, enabling users to seamlessly share curated datasets with others. The sharing mechanism is facilitated directly through the **packageR UI**, allowing users to generate presigned URLs for specific data files or entire datasets. This process enhances accessibility while maintaining security and control over the data.
+Fileexplorer like browsing and sharing are the main capabilities
 
 ### How It Works
 
 1. **Access the UI**:
-   - Users can navigate to the **packageR UI** to manage their curated datasets. The interface provides options to view the data package structure and access metadata associated with the datasets.
+   - Users can navigate to the `packageR` UI browse to manage their curated datasets. The interface provides options to view the data package structure and access metadata associated with the datasets.
 
 2. **Generate Presigned URLs**:
    - Instead of directly browsing and downloading content, users can opt to generate presigned URLs for the data files they wish to share. This allows others to access the data securely without exposing the actual storage locations.

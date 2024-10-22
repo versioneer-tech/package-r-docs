@@ -1,29 +1,39 @@
 # Key Features
 
-## 1. Flexible Data Management with Git Annex 
+`packageR` incorporates the following capabilities:
 
-packageR integrates the `git annex addurl` feature to register external data sources, creating lightweight pointers to data stored externally. These pointers are resolved when a user runs `git annex get`.
+## 1. Flexible Data Management with `git annex` 
 
-- Utilize packageR’s convenient tools (UI, API) for simplifying external data registration, but you can always revert to using Git Annex’s `addurl` directly.
-- Requests are routed through a secure packageR API endpoint, which checks user permissions, allowing pointer files to be shared in Git while authorization is determined later during resolution.
+`packageR` integrates the `git annex addurl` feature to register external data sources for published data, creating lightweight pointers to externally stored data. These pointers are resolved when a consumer runs `git annex get`.
+
+- `packageR`’s tools (UI, API) simplify external data registration, but producers can revert to `git annex addurl` directly.
+- Data consumption routes through a secure `packageR` API endpoint, checking user permissions, allowing pointer files to be shared without exchanging storage credentials.
+
+**Benefit**: Full reproducibility and provenance with common `git`flows ensure audit trails for better data governance and reliability.
 
 ## 2. No Proprietary Infrastructure
 
-One of packageR's main advantages is its operation without proprietary infrastructure for data packages, relying on standard Git repositories and commodity object storage solutions like Amazon S3.
+`packageR` operates without proprietary infrastructure, using standard Git-Repositories and commodity object storage like Amazon S3.
 
-- There’s no need for a specialized Git hosting provider; data packages consist of Git Annex pointer files for all registered external data. These remain regular files, resolved on the client side via the Git Annex tool.
-- You can organize your data package structure and include additional reference data or metadata files (e.g., `README.md`) as desired since it functions as a standard Git repository.
+- No need for a specialized `git`hosting provider; data packages include `git annex` pointer files resolved client-side.
+- Organize data package structures with additional reference or metadata files in a standard Git-Repository.
+
+**Benefit**: Teams can work in familiar environments like GitHub and GitLab, providing transparency and utilizing well-established tools and principles.
 
 ## 3. Simple and Secure Data Sharing via Git
 
-Leverage the native authentication mechanisms of GitHub or GitLab.
+`packageR` leverages the native authentication mechanisms of GitHub or GitLab.
 
-- Sharing data with packageR is as straightforward as granting access to a Git repository. The decision to make it public or private lies entirely with your team.
-- You can make a repository public while restricting data resolution (via Git Annex `get`) to certain users. Only those with at least read permissions can resolve the Git Annex pointer files using packageR endpoints.
+- Data sharing is as simple as granting access to a Git-Repository, with your team deciding on public or private access.
+- Public repositories can restrict data resolution (via `git annex get`) to specific users.
 
-## 4. Scalable, Flexible, and Secure Data Storage
+**Benefit**: Granular permissions can be finely tuned, allowing users with read access to pull and resolve files, while others can contribute by managing or editing the repository.
 
-packageR provides scalable and secure data storage by utilizing cloud-based object storage solutions, simplifying the management of large datasets.
+## 4. Flexible Data Storage
 
-- Data is stored in scalable, secure cloud storage like Amazon S3, minimizing the load on the Git repository when handling large datasets.
-- packageR’s presigned URL mechanism ensures secure access, with only the Data Curator needing access to the storage credentials and packageR's backend methods for generating presigned URLs.
+`packageR` supports scalable and secure data storage through cloud-based object storage solutions.
+
+- Data is stored in scalable cloud storage like S3, reducing load on Git-Repositories when handling large datasets.
+- `packageR`’s presigned URL mechanism ensures secure access, with only the Data Curator needing storage credentials.
+
+**Benefit**: `git`hosting and data storage are separated, allowing for independent scaling. Data consumers can resolve only the files they need, optimizing storage and bandwidth usage.

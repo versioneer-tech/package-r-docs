@@ -77,20 +77,20 @@ nav:
       - index.md
       - Intro:
         - intro/features.md
-        - intro/philosophy.md
-        - intro/architecture.md
-      - Legal:
-        - legal/license.md
-  - Packaging Data:
-      - data-packaging/overview.md
-      - Personas:          
-          - data-packaging/data-curation.md
-          - data-packaging/data-governance.md
-          - data-packaging/data-usage.mdd
-  - Sharing Data:
-      - data-sharing/overview.md
+        - intro/components.md
+  - Workflows:
+      - workflows/index.md
+      - Personas:
+          - workflows/data-curation.md
+          - workflows/data-governance.md
+          - workflows/data-use.md
+  - Components:
+      - components/index.md
+      - components/ui.md
+      - components/api.md
   - Tutorials:
-      - tutorials/manage_dataset_with_dvc.md
+      - tutorials/index.md
+      - tutorials/e2e.md
 
 # Footer links
 extra:
