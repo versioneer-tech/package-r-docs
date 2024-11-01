@@ -22,7 +22,7 @@ In the role of **Data Governance**, you manage access to both cloud storage and 
 
 ---
 
-## 3. Data Scientist/Collaborator
+## 3. Data Scientist & Collaborator
 As a **Data Scientist** or **Collaborator**, you engage with curated datasets, utilizing `git annex` to selectively download the data you need. With the appropriate permissions, you can also contribute new files, data references, or documentation to the repository, collaborating seamlessly within the GitHub or GitLab environment.
 
 ### Key Responsibilities:
