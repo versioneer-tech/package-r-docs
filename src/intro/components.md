@@ -1,12 +1,12 @@
 # Architecture
 
-The architecture of `packageR` is organized into three key components that work together to provide a seamless data management experience.
+The architecture of `packageR` is organized into three key components, each designed to provide a seamless and secure data management experience.
 
-### 1. `packageR` UI:
-The `packageR` UI mimics a file-browser interface, making it easy for users to manage and curate data packages. Users can browse connected object storage buckets, select external data, and register it within packages. Once the data is registered, the package can be directly published to a Git-Repository. While users can share data via presigned URLs, the preferred method for reproducibility is using the `git annex` workflow, which offers more robust version control and auditing.
+### 1. `packageR` UI
+The `packageR` UI features a file-browser interface, making it intuitive for users to manage and curate data packages. Users can navigate connected storage sources (e.g., object storage buckets), select individual data assets or folders (prefixes), and register them within packages. Once data is registered, it can be shared with selected audiences. The shared data can then be either downloaded directly or staged to a repository, allowing tools like `dvc` or `git annex` to provide robust version control and audit capabilities, ensuring reproducibility and data integrity.
 
-### 2. `packageR` API:
-The `packageR` API underpins much of the system's functionality, particularly for registering external data as pointer files via `git annex`. The API also handles secure data access by generating presigned URLs for approved users. When a data consumer requests a file, the API checks their permissions and either returns or redirects them to the presigned URL. This ensures data is securely accessible without requiring users to directly manage storage credentials.
+### 2. `packageR` API
+The `packageR` API provides the necessary file-system abstraction functionality, including registering external data as pointer files and managing secure data access. When a data consumer requests access, the API verifies their permissions and then generates a presigned URL, either redirecting or providing direct access. This setup ensures that data remains securely accessible without requiring users to handle storage credentials. Additionally, the API supports connecting and browsing various storage sources, making it a central point for secure data operations.
 
-### 3. `git annex` Workflow with `git`:
-`packageR` integrates with any Git-compatible hosting service, such as GitHub or GitLab, to store and manage pointer files and other supplementary content like metadata or README files. The permissions model of `git`hosting services ensures that only authorized users can access or modify these files. By leveraging `git annex`, `packageR` provides a scalable and secure way to manage large datasets, allowing users to browse rep
+### 3. Source Management
+`packageR` offers a unified view of all data assets across connected storage sources (e.g., object storage buckets) by utilizing file system mounts. Mounting methods are flexible, supporting widely-used options like FUSE with `s3fs`. For operation deployment scenarios using Kubernetes, the open-source tool [sourceD](https://github.com/versioneer-tech/source-d) can streamline the mounting process, which is also utilized by [Versioneer](https://versioneer.at) in operational management. For each mounted source, `packageR` requires necessary credentials to generate presigned URLs. This can be configured with direct secret mounts or through integrated `sourceD` tools, ensuring secure and efficient data access.
