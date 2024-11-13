@@ -4,6 +4,4 @@ As a **Data Governance** professional, your main role is to manage and regulate 
 
 ### Tasks and Responsibilities:
 - **Manage Connected Object Storage**: Select which cloud object storage services integrate with the `packageR` UI for data curation.
-- **Manage  Access**: Control access grant by managing permissions .
-
-### Workflow:
+- **Manage  Access**: Control access grant by managing permissions.

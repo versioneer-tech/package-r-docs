@@ -7,5 +7,3 @@ As a **Data Curator**, you play a vital role in assembling and organizing datase
 - **Reference External Data**: Register external data files (URLs pointing to objects in different clouds) without duplicating the files themselves.
 - **Add Additional Documentation**: Include metadata or supporting files, such as `README.md`, to describe the dataset and its usage.
 - **Share Data Packages**: Share your curated folder structure, metadata, and URLs as data package.
-
-### Workflow:
