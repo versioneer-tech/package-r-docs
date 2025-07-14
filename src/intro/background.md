@@ -1,4 +1,4 @@
-# Backround
+# Background
 
 `packageR` arose from the idea of simplifying work with different data and, above all, large data sets, whether you’re working alone or as part of a team. In real-world data workflows, teams face challenges not just from file sizes, but from the diversity of data formats, fragmented storage systems, and lack of user-friendly tools for secure sharing and collaboration.
 
