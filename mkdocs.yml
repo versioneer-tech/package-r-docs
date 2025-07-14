@@ -78,7 +78,7 @@ nav:
       - packageR:
         - intro/features.md
         - intro/components.md
-        - intro/backround.md
+        - intro/background.md
   - Workflows:
       - workflows/index.md
       - Personas:
